@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#root {
+    height: 100svh;
+    width: 100svw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+#board {
+    height:600px;
+    width:600px;
+    position:relative;
+    padding:1rem;
+    margin:auto;
+    background:skyblue;
+  }
+  
+  .col {
+    display: grid;
+    place-content: center;
+    font-size: 60px;
+  }
+
+  .row#row-1,
+  .row#row-2 {
+    color: black;
+    text-shadow: 0 0 4px white;
+  }
+  .col {
+    height:70px;
+    width:70px;
+    padding:2.5px;
+  }
+  
+  #board .row:nth-child(even) .col:nth-child(even) {
+   background-color: azure;
+  }
+  #board .row:nth-child(even) .col:nth-child(odd) {
+   background-color: darkslategrey;
+  }
+  #board .row:nth-child(odd) .col:nth-child(odd) {
+   background-color: azure;
+  }
+  #board .row:nth-child(odd) .col:nth-child(even) {
+   background-color: darkslategrey;
+  }
+
+  .row#row-7,
+  .row#row-8 {
+    color: white;
+    text-shadow: 0 0 4px black;
+  }
+  .col.selected {
+    border: 2px solid red;
+  }
+
+  .col.valid-move {
+    box-shadow:inset 0 0 14px green, inset 0 0 14px green, inset 0 0 14px green;
+  }
+  .white {
+    color: white;
+    text-shadow: 0 0 4px black, 0 0 4px black;
+  }
+  .black {
+    color: black;
+    text-shadow: 0 0 4px white, 0 0 4px white;
+  }
+  .game-over {
+    position: absolute;
+    transform: translate(-1rem, -1rem);
+    align-items: center;
+    justify-content: center;
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  #rows {
+    width: calc(75px * 8);
+    height: 75px;
+    background-color: rebeccapurple;
+  }
+
+  #col {
+    width: 75px;
+    height: calc(75px * 8);
+    background-color: rebeccapurple;
+  }
